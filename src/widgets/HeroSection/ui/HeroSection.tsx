@@ -18,7 +18,7 @@ export function HeroSection() {
           </defs>
           <text>
             <textPath href="#music-circle-path" startOffset="0%">
-              Музыканы қосу үшін басыңыз · Музыканы қосу үшін басыңыз ·
+              Музыканы қосу үшін басыңыз · 
             </textPath>
           </text>
         </svg>

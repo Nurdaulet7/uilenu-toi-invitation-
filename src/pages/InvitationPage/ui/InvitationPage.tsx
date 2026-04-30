@@ -2,6 +2,7 @@ import { HeroSection } from '@widgets/HeroSection';
 import { HostsSection } from '@widgets/HostsSection';
 import { InvitationIntro } from '@widgets/InvitationIntro';
 import { DressCode } from '@widgets/DressCode';
+import { EventCountdown } from '@widgets/EventCountdown';
 import { GallerySlider } from '@widgets/GallerySlider';
 import { RSVPSection } from '@widgets/RSVPSection';
 import { SaveDateLocation } from '@widgets/SaveDateLocation';
@@ -18,6 +19,7 @@ export function InvitationPage() {
       <DressCode />
       <HostsSection />
       <RSVPSection />
+      <EventCountdown />
     </main>
   );
 }

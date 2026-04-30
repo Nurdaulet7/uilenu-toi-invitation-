@@ -45,4 +45,13 @@ export type InvitationEvent = {
     title: string;
     names: string;
   };
+  countdown: {
+    title: string;
+    /** Фондық сурет жолы (мыс. /images/hero.webp) */
+    backgroundImage: string;
+    /** Алматы уақытын немесе қолайлы ISO (мыс.: 2025-09-27T16:00:00+05:00) */
+    startsAtISO: string;
+    /** Санақ аяқталғанда көрсетілетін жол */
+    expiredMessage?: string;
+  };
 };

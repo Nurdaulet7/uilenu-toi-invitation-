@@ -1,0 +1,118 @@
+.section {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  min-height: 100svh;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.bg {
+  position: absolute;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  inset: 0;
+}
+
+.scrim {
+  position: absolute;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(18, 14, 11, 0.35) 0%,
+    rgba(18, 14, 11, 0.55) 50%,
+    rgba(18, 14, 11, 0.45) 100%
+  );
+  inset: 0;
+  pointer-events: none;
+}
+
+.shell {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: clamp(36px, 8vh, 72px);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 5vh, 44px);
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  color: var(--color-surface);
+  font-family: "Qazaq SC", var(--font-display);
+  font-size: clamp(2.1rem, 6vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.2;
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.35);
+  text-wrap: balance;
+}
+
+.row {
+  display: flex;
+  // flex-wrap: wrap;
+  gap: clamp(12px, 2.8vw, 20px);
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.sep {
+  margin: 0 2px clamp(22px, 4vw, 28px);
+  color: rgba(255, 250, 242, 0.88);
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 5.2vw, 2.45rem);
+  font-weight: 400;
+  line-height: 1;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.35);
+}
+
+.unit {
+  display: grid;
+  min-width: 3.75rem;
+  gap: 8px;
+  justify-items: center;
+}
+
+.value {
+  min-width: 2ch;
+  color: var(--color-surface);
+  font-family: "Qazaq SC", var(--font-display);
+  font-size: clamp(2rem, 7vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.42);
+}
+
+.label {
+  color: rgba(255, 250, 242, 0.82);
+  font-family: var(--font-body);
+  font-size: clamp(0.8rem, 2.6vw, 0.95rem);
+  font-weight: 500;
+  line-height: 1.25;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.38);
+}
+
+.expired {
+  margin: 0;
+  max-width: 28rem;
+  color: rgba(255, 250, 242, 0.92);
+  font-family: var(--font-body);
+  font-size: clamp(1.02rem, 3vw, 1.15rem);
+  line-height: 1.58;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.42);
+  text-wrap: balance;
+}

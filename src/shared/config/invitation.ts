@@ -2,7 +2,7 @@ import type { InvitationEvent } from "@entities/event";
 
 export const invitation: InvitationEvent = {
   couple: "Аяулым & Арман",
-  date: "27 қыркүйек 2025",
+  date: "27 қыркүйек 2026",
   intro: {
     title: "Қадірлі қонақтар!",
     paragraphs: [
@@ -13,7 +13,7 @@ export const invitation: InvitationEvent = {
   },
   saveDate: {
     title: "Той салтанаты:",
-    date: "27 қыркүйек 2025",
+    date: "27 қыркүйек 2026",
     text: "біз бір отбасы болатын керемет күн",
     image: "/images/save-date.webp",
   },
@@ -56,5 +56,11 @@ export const invitation: InvitationEvent = {
   hosts: {
     title: "Той иелері:",
     names: "Нұрбек пен Айгерім",
+  },
+  countdown: {
+    title: "Той салтанатына дейін",
+    backgroundImage: "/images/save-date.webp",
+    startsAtISO: "2026-09-27T16:00:00+05:00",
+    expiredMessage: "Құттықтаймыз! Бұл күн ең жарқын естеліктерге толсын.",
   },
 };

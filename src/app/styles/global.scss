@@ -1,19 +1,19 @@
-@use './fonts';
-@use './tokens';
+@use "./fonts";
+@use "./tokens";
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  min-width: 375px;
+  min-width: 360px;
   min-height: 100%;
   scroll-behavior: smooth;
 }
 
 body {
   display: flex;
-  min-width: 375px;
+  min-width: 360px;
   min-height: 100vh;
   margin: 0;
   justify-content: center;
