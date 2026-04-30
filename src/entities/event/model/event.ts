@@ -10,10 +10,19 @@ export type InvitationEvent = {
     title: string;
     paragraphs: string[];
   };
+  saveDate: {
+    title: string;
+    date: string;
+    text: string;
+    image: string;
+  };
   details: EventDetail[];
   venue: {
     name: string;
     address: string;
     mapUrl: string;
+    time: string;
+    city: string;
+    image: string;
   };
 };

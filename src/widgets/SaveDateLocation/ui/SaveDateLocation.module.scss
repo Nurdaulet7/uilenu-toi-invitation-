@@ -1,0 +1,160 @@
+.section {
+  overflow: hidden;
+}
+
+.row {
+  display: grid;
+  min-height: 360px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  & + & {
+    margin-top: clamp(28px, 7vw, 56px);
+  }
+}
+
+.imagePanel {
+  min-height: 360px;
+  overflow: hidden;
+  border-radius: 10px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+    object-fit: cover;
+  }
+}
+
+.imagePanelSaveDate {
+  border-radius: 0 10px 10px 0;
+}
+
+.imagePanelVenue {
+  border-radius: 10px 0 0 10px;
+}
+
+.contentPanel {
+  display: flex;
+  min-height: 360px;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(28px, 6vw, 78px) clamp(14px, 4vw, var(--layout-padding-x));
+  text-align: center;
+}
+
+.saveDateKicker {
+  margin: 0 0 14px;
+  color: var(--color-accent-strong);
+  // font-family: var(--font-display);
+  font-size: clamp(1.12rem, 3.2vw, 1.45rem);
+  // font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.25;
+  text-wrap: balance;
+  text-transform: none;
+}
+
+.kicker,
+.mapService {
+  margin: 0 0 14px;
+  color: var(--color-accent-strong);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 4.8vw, 2.05rem) !important;
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.venueTitle {
+  font-size: clamp(1.45rem, 4.6vw, 2.72rem) !important;
+}
+
+.description {
+  margin: 20px auto 0;
+  max-width: 440px;
+  color: var(--color-muted);
+  font-size: clamp(0.82rem, 3vw, 1.35rem);
+  line-height: 1.48;
+}
+
+.mapService {
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+
+.time {
+  margin: 18px 0 0;
+  font-family: var(--font-display);
+  color: var(--color-accent-strong);
+  font-size: clamp(1.9rem, 7.8vw, 5.2rem);
+  line-height: 0.95;
+}
+
+a {
+  display: inline-flex;
+  margin: 30px auto 0;
+}
+
+.section .contentPanel a .mapButton {
+  gap: 0.45rem;
+  border-color: var(--color-line);
+  background-color: var(--color-surface);
+
+  &:hover {
+    background-color: var(--color-paper);
+    border-color: rgba(104, 66, 50, 0.28);
+  }
+}
+
+@media (min-width: 720px) {
+  .imagePanel,
+  .contentPanel {
+    min-height: 540px;
+  }
+}
+
+@media (max-width: 420px) {
+  .row {
+    min-height: 320px;
+  }
+
+  .imagePanel,
+  .contentPanel {
+    min-height: 320px;
+  }
+
+  .saveDateKicker {
+    margin-bottom: 10px;
+    font-size: clamp(0.98rem, 4vw, 1.2rem);
+  }
+
+  .kicker,
+  .mapService {
+    margin-bottom: 10px;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+  }
+
+  .description {
+    margin-top: 12px;
+  }
+
+  .mapService {
+    margin-top: 16px;
+  }
+
+  .time {
+    margin-top: 12px;
+  }
+
+  a {
+    margin-top: 18px;
+  }
+}
