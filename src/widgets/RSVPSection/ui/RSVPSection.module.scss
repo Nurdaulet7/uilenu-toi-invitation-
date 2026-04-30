@@ -4,32 +4,45 @@
 }
 
 .inner {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 5vw, 40px);
+  align-items: center;
+  margin: 0 auto;
+  max-width: 440px;
+  text-align: center;
+}
+
+.head {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(32px, 7vw, 96px);
-  align-items: start;
+  gap: clamp(14px, 3vw, 20px);
 }
 
 .kicker {
-  margin: 0 0 12px;
-  color: var(--color-muted);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-h2 {
   margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(2.6rem, 6vw, 5.4rem);
-  font-weight: 500;
-  line-height: 1;
+  padding: 0;
+  border: none;
+  color: var(--color-ink);
+  font-family: "Qazaq SC", var(--font-display);
+  font-size: clamp(2.1rem, 6vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: 0.14em;
 }
 
-@media (min-width: 820px) {
-  .inner {
-    max-width: 960px;
-    grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
-  }
+.intro {
+  margin: 0;
+  // max-width: 34ch;
+  margin-inline: auto;
+  color: var(--color-muted);
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 2.65vw, 1rem);
+  line-height: 1.58;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.formWrap {
+  width: 100%;
+  text-align: left;
 }

@@ -12,7 +12,7 @@
     display: block;
     width: calc(100% + 1.3px);
     height: 100%;
-    background: var(--color-surface);
+    background: var(--shape-divider-fill, var(--color-surface));
     content: "";
     mask-image: url("../../assets/shapes/hero-bottom-wave.svg");
     mask-position: bottom;
@@ -51,9 +51,22 @@
   }
 }
 
+/** Верхний край внутри блока — волна лежит поверх содержимого (напр. над слайдом). */
+.topOverlay {
+  top: 0;
+  height: 50px;
+
+  &::after {
+    bottom: 0;
+    mask-position: top;
+    -webkit-mask-position: top;
+  }
+}
+
 @media (max-width: 560px) {
   .divider.bottom,
-  .divider.top {
+  .divider.top,
+  .divider.topOverlay {
     height: 44px;
   }
 }
