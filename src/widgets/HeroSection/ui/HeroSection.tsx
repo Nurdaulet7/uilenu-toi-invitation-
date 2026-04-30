@@ -42,7 +42,7 @@ export function HeroSection() {
       </div>
 
       <Container className={styles.content}>
-        <h1 className={styles.title}>Аяулым & Арман</h1>
+        <h1 className={styles.title}>Айдана & Диас</h1>
         <p className={styles.subtitle}>Үйлену тойы</p>
       </Container>
 

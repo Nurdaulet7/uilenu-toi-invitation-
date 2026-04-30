@@ -6,7 +6,10 @@ export type EventDetail = {
 export type InvitationEvent = {
   couple: string;
   date: string;
-  intro: string;
+  intro: {
+    title: string;
+    paragraphs: string[];
+  };
   details: EventDetail[];
   venue: {
     name: string;

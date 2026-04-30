@@ -2,10 +2,24 @@
   padding: var(--section-y) 0;
   text-align: center;
 
-  p {
+  h2 {
     margin: 0;
     font-family: var(--font-display);
-    font-size: clamp(2rem, 5vw, 4.5rem);
-    line-height: 1.08;
+    font-size: clamp(2.4rem, 8vw, 4.7rem);
+    font-weight: 400;
+    line-height: 1;
+  }
+}
+
+.text {
+  display: grid;
+  gap: 18px;
+  margin-top: clamp(28px, 7vw, 48px);
+
+  p {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: clamp(1.05rem, 3.7vw, 1.35rem);
+    line-height: 1.65;
   }
 }

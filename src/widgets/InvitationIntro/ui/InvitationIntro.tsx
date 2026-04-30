@@ -7,7 +7,12 @@ export function InvitationIntro() {
   return (
     <section className={styles.section} id="intro">
       <Container>
-        <p>{invitation.intro}</p>
+        <h2>{invitation.intro.title}</h2>
+        <div className={styles.text}>
+          {invitation.intro.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
       </Container>
     </section>
   );
