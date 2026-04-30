@@ -38,4 +38,19 @@ export const invitation: InvitationEvent = {
       { src: "/images/hero.webp", alt: "" },
     ],
   },
+  dressCode: {
+    title: "Dress code",
+    paragraphs: [
+      "Бұл күн біздің жүрегімізде жарық естеліктермен және нәзіктікке толы болғанын қалаймыз.",
+      "Сұлу арулар нәзік ашық түсті таңдап, жігіттер сәнді костюм кигенін сұраймыз.",
+    ],
+    ladies: {
+      label: "Ханымдар",
+      colors: ["#d8cdb9", "#e1babb", "#fcebd7", "#e1c6b3", "#be9275"],
+    },
+    men: {
+      label: "Ерлер",
+      colors: ["#0a080b", "#50311d", "#806248", "#a5907b", "#d3cbbe"],
+    },
+  },
 };

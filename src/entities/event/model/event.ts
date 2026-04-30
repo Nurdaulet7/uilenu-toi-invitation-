@@ -29,4 +29,16 @@ export type InvitationEvent = {
     title: string;
     images: Array<{ src: string; alt: string }>;
   };
+  dressCode: {
+    title: string;
+    paragraphs: string[];
+    ladies: {
+      label: string;
+      colors: string[];
+    };
+    men: {
+      label: string;
+      colors: string[];
+    };
+  };
 };
