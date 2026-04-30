@@ -35,16 +35,16 @@ export function RSVPForm() {
       return;
     }
 
-    const attendanceText =
+    const attendanceTelegramLine =
       form.attendance === 'coming'
-        ? rsvpContent.attendanceComing
-        : rsvpContent.attendanceNotComing;
+        ? `✅ ${rsvpContent.attendanceComing}`
+        : `❌ ${rsvpContent.attendanceNotComing}`;
 
     const text =
-      `📩 RSVP\n\n` +
+      `${rsvpContent.telegramMessageHeading}\n\n` +
       `👤 ${form.name.trim()}\n` +
       `👥 Адам саны: ${form.guests}\n` +
-      `✅ ${attendanceText}`;
+      `${attendanceTelegramLine}`;
 
     try {
       const res = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
@@ -121,7 +121,10 @@ export function RSVPForm() {
                 value={val}
                 onChange={() => setForm((f) => ({ ...f, attendance: val }))}
               />
-              <span className={styles.radioCustom} aria-hidden />
+              <span
+                className={val === 'not-coming' ? styles.radioCustomX : styles.radioCustom}
+                aria-hidden
+              />
               <span className={styles.radioText}>
                 {val === 'coming' ? rsvpContent.attendanceComing : rsvpContent.attendanceNotComing}
               </span>

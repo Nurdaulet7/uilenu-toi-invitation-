@@ -36,5 +36,5 @@ npm run preview
 SVG можно импортировать как React-компоненты через `?react`:
 
 ```tsx
-import FlowerIcon from '@shared/assets/icons/flower.svg?react';
+import ArrowDown from '@shared/assets/icons/arrow-down.svg?react';
 ```

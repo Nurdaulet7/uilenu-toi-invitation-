@@ -1,1 +1,0 @@
-export { ShapeDivider } from './ShapeDivider';

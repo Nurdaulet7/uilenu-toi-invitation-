@@ -141,6 +141,39 @@
   }
 }
 
+.radioCustomX {
+  position: relative;
+  display: grid;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 3px;
+  place-items: center;
+  border: 2px solid var(--color-line);
+  border-radius: 6px;
+  background: transparent;
+  transition: border-color 0.16s ease;
+
+  &::after {
+    content: '\00d7';
+    color: var(--color-accent-strong);
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    opacity: 0;
+    transition: opacity 0.16s ease;
+  }
+
+  .radioInput:checked + & {
+    border-color: var(--color-accent-strong);
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
 .radioText {
   padding-top: 1px;
   font-family: var(--font-body);
