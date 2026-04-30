@@ -15,6 +15,7 @@ const staggerParent = {
 };
 
 const fadeUpTransition = { duration: 0.52, ease: 'easeOut' } as const;
+const swatchTransition = { duration: 0.48, ease: 'easeOut' } as const;
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -27,7 +28,7 @@ const swatchItem = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.48, ease: 'easeOut' },
+    transition: swatchTransition,
   },
 };
 
