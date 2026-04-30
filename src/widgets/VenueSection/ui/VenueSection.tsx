@@ -1,6 +1,7 @@
 import { ExternalLink } from 'lucide-react';
 
 import { Button } from '@shared/ui/Button';
+import { Container } from '@shared/ui/Container';
 import { invitation } from '@shared/config/invitation';
 
 import styles from './VenueSection.module.scss';
@@ -8,7 +9,7 @@ import styles from './VenueSection.module.scss';
 export function VenueSection() {
   return (
     <section className={styles.section}>
-      <div className={styles.inner}>
+      <Container className={styles.inner}>
         <p className={styles.kicker}>Location</p>
         <h2>{invitation.venue.name}</h2>
         <p>{invitation.venue.address}</p>
@@ -18,7 +19,7 @@ export function VenueSection() {
             Открыть карту
           </Button>
         </a>
-      </div>
+      </Container>
     </section>
   );
 }

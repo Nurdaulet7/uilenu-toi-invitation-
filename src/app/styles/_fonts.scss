@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('@shared/assets/fonts/Lora-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('@shared/assets/fonts/Lora-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('@shared/assets/fonts/Lora-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Qazaq SC';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('@shared/assets/fonts/QazaqSC.woff2') format('woff2');
+}
