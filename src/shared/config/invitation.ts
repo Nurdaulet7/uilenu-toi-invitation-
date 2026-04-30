@@ -63,4 +63,7 @@ export const invitation: InvitationEvent = {
     startsAtISO: "2026-09-27T16:00:00+05:00",
     expiredMessage: "Құттықтаймыз! Бұл күн ең жарқын естеліктерге толсын.",
   },
+  closing: {
+    lines: ["Келіңіздер,", "тойымыздың қадірлі қонағы болыңыздар!"],
+  },
 };

@@ -54,4 +54,7 @@ export type InvitationEvent = {
     /** Санақ аяқталғанда көрсетілетін жол */
     expiredMessage?: string;
   };
+  closing: {
+    lines: string[];
+  };
 };
