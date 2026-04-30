@@ -25,4 +25,8 @@ export type InvitationEvent = {
     city: string;
     image: string;
   };
+  gallery: {
+    title: string;
+    images: Array<{ src: string; alt: string }>;
+  };
 };

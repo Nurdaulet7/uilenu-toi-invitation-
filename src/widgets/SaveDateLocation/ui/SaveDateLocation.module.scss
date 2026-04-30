@@ -1,5 +1,6 @@
 .section {
   overflow: hidden;
+  padding-bottom: clamp(36px, 8vw, 80px);
 }
 
 .row {

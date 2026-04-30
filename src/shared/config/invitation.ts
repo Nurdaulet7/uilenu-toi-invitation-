@@ -30,4 +30,12 @@ export const invitation: InvitationEvent = {
     mapUrl: "https://2gis.kz/almaty",
     image: "/images/location.webp",
   },
+  gallery: {
+    title: "Сүйікті сәттер",
+    images: [
+      { src: "/images/save-date.webp", alt: "" },
+      { src: "/images/location.webp", alt: "" },
+      { src: "/images/hero.webp", alt: "" },
+    ],
+  },
 };
