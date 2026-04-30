@@ -1,0 +1,13 @@
+.section {
+  width: min(100% - 40px, 820px);
+  margin: 0 auto;
+  padding: var(--section-y) 0;
+  text-align: center;
+
+  p {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    line-height: 1.08;
+  }
+}

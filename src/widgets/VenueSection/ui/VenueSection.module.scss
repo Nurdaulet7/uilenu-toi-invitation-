@@ -1,0 +1,31 @@
+.section {
+  padding: var(--section-y) 20px;
+}
+
+.inner {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.kicker {
+  margin: 0 0 12px;
+  color: var(--color-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+p {
+  margin: 18px 0 28px;
+  color: var(--color-muted);
+}

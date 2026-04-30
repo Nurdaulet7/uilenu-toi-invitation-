@@ -1,0 +1,30 @@
+.button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0 22px;
+  font-weight: 600;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.primary {
+  color: #fffaf2;
+  background: var(--color-accent-strong);
+}
+
+.ghost {
+  color: var(--color-accent-strong);
+  border-color: var(--color-line);
+  background: transparent;
+}

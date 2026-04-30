@@ -1,0 +1,13 @@
+:root {
+  --color-paper: #f7f1e8;
+  --color-ink: #2f2a24;
+  --color-muted: #776f64;
+  --color-line: rgba(47, 42, 36, 0.16);
+  --color-accent: #8c5f49;
+  --color-accent-strong: #684232;
+  --color-surface: #fffaf2;
+  --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-body: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --layout-max-width: 1120px;
+  --section-y: clamp(64px, 10vw, 120px);
+}
