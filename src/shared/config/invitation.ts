@@ -53,4 +53,8 @@ export const invitation: InvitationEvent = {
       colors: ["#0a080b", "#50311d", "#806248", "#a5907b", "#d3cbbe"],
     },
   },
+  hosts: {
+    title: "Той иелері:",
+    names: "Нұрбек пен Айгерім",
+  },
 };

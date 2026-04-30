@@ -1,4 +1,5 @@
 import { HeroSection } from '@widgets/HeroSection';
+import { HostsSection } from '@widgets/HostsSection';
 import { InvitationIntro } from '@widgets/InvitationIntro';
 import { DressCode } from '@widgets/DressCode';
 import { GallerySlider } from '@widgets/GallerySlider';
@@ -15,6 +16,7 @@ export function InvitationPage() {
       <SaveDateLocation />
       <GallerySlider />
       <DressCode />
+      <HostsSection />
       <RSVPSection />
     </main>
   );

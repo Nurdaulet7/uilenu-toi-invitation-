@@ -41,4 +41,8 @@ export type InvitationEvent = {
       colors: string[];
     };
   };
+  hosts: {
+    title: string;
+    names: string;
+  };
 };
