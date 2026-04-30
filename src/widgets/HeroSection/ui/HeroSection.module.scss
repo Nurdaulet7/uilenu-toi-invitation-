@@ -27,7 +27,7 @@
 .title {
   margin: 0 auto;
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 9vw, 6.2rem);
+  font-size: clamp(2.8rem, 9vw, 5.2rem);
   font-weight: 400;
   line-height: 0.98;
   text-wrap: balance;
@@ -130,10 +130,6 @@
 .scrollArrow {
   width: 32px;
   height: auto;
-}
-
-.shapeDivider {
-  z-index: 1;
 }
 
 @keyframes spin {

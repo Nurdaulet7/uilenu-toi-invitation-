@@ -1,16 +1,34 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import ArrowDown from '@shared/assets/icons/arrow-down.svg?react';
 import { Container } from '@shared/ui/Container';
-import { ShapeDivider } from '@shared/ui/ShapeDivider';
-
 import styles from './HeroSection.module.scss';
+
+const BACKGROUND_TRACK_SRC = '/audio/nurzhan-kermenbayev-ainalaiyn.mp3';
 
 export function HeroSection() {
   const [isMusicEnabled, setIsMusicEnabled] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    const el = audioRef.current;
+    if (!el) return;
+    el.volume = 0.65;
+    if (isMusicEnabled) {
+      const p = el.play();
+      if (p !== undefined)
+        void p.catch(() => {
+          setIsMusicEnabled(false);
+        });
+    } else {
+      el.pause();
+    }
+  }, [isMusicEnabled]);
 
   return (
     <section className={styles.hero} id="hero">
+      <audio aria-hidden ref={audioRef} loop preload="metadata" src={BACKGROUND_TRACK_SRC} />
+
       <div className={styles.musicWrap}>
         <svg className={styles.musicCircleText} viewBox="0 0 120 120" aria-hidden="true">
           <defs>
@@ -49,8 +67,6 @@ export function HeroSection() {
       <a className={styles.scrollButton} href="#intro" aria-label="Келесі бөлімге өту">
         <ArrowDown className={styles.scrollArrow} aria-hidden="true" />
       </a>
-
-      <ShapeDivider className={styles.shapeDivider} />
     </section>
   );
 }
