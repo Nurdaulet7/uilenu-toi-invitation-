@@ -1,9 +1,25 @@
 import { useEffect, useMemo, useState } from 'react';
 
+import { motion } from 'framer-motion';
+
 import { invitation } from '@shared/config/invitation';
 import { Container } from '@shared/ui/Container';
 
 import styles from './EventCountdown.module.scss';
+
+const staggerParent = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.11, delayChildren: 0.08 },
+  },
+};
+
+const fadeUpTransition = { duration: 0.55, ease: 'easeOut' } as const;
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 26 },
+  visible: { opacity: 1, y: 0, transition: fadeUpTransition },
+};
 
 function splitRemaining(msRemaining: number) {
   if (msRemaining <= 0)
@@ -48,21 +64,33 @@ export function EventCountdown() {
       {bgStyle ? <div aria-hidden="true" className={styles.bg} style={bgStyle} /> : null}
       <div aria-hidden="true" className={styles.scrim} />
       <Container className={styles.shell}>
-        <div className={styles.inner}>
-          <h2 className={styles.title} id="countdown-heading">
+        <motion.div
+          className={styles.inner}
+          variants={staggerParent}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.38 }}
+        >
+          <motion.h2 className={styles.title} id="countdown-heading" variants={fadeUp}>
             {title}
-          </h2>
+          </motion.h2>
 
           {!Number.isFinite(targetMs) ? (
-            <p className={styles.expired} role="status">
+            <motion.p className={styles.expired} role="status" variants={fadeUp}>
               {expiredText}
-            </p>
+            </motion.p>
           ) : parts.expired ? (
-            <p className={styles.expired} role="status">
+            <motion.p className={styles.expired} role="status" variants={fadeUp}>
               {expiredText}
-            </p>
+            </motion.p>
           ) : (
-            <div className={styles.row} role="timer" aria-live="polite" aria-atomic="true">
+            <motion.div
+              className={styles.row}
+              role="timer"
+              aria-live="polite"
+              aria-atomic="true"
+              variants={fadeUp}
+            >
               <div className={styles.unit}>
                 <span className={styles.value}>{parts.days}</span>
                 <span className={styles.label}>{LABELS[0]}</span>
@@ -88,9 +116,9 @@ export function EventCountdown() {
                 <span className={styles.value}>{String(parts.seconds).padStart(2, '0')}</span>
                 <span className={styles.label}>{LABELS[3]}</span>
               </div>
-            </div>
+            </motion.div>
           )}
-        </div>
+        </motion.div>
       </Container>
     </section>
   );
