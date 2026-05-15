@@ -2,7 +2,7 @@ import type { InvitationEvent } from "@entities/event";
 
 export const invitation: InvitationEvent = {
   couple: "Аяулым & Арман",
-  date: "27 қыркүйек 2026",
+  date: "6 маусым 2026",
   intro: {
     title: "Қадірлі қонақтар!",
     paragraphs: [
@@ -12,30 +12,37 @@ export const invitation: InvitationEvent = {
     ],
   },
   saveDate: {
-    title: "Той салтанаты:",
-    date: "27 қыркүйек 2026",
+    title: "Той күні:",
+    date: "6 маусым 2026",
     text: "біз бір отбасы болатын керемет күн",
     image: "/images/save-date.webp",
   },
   details: [
     { label: "Қонақтардың жиналуы", value: "16:00" },
-    { label: "Мекен-жайымыз", value: "Crystal hall" },
-    { label: "Қала", value: "Алматы" },
+    { label: "Мекен-жайымыз", value: "Dariya" },
+    { label: "Қала", value: "Қызылорда" },
   ],
   venue: {
-    name: '"Crystal hall" мейрамханасы',
-    address: 'Алматы қаласы, "Crystal hall" мейрамханасы',
-    city: "Алматы қаласы",
+    name: '"Dariya" мейрамханасы',
+    address: 'Қызылорда қаласы, "Dariya" мейрамханасы',
+    city: "Қызылорда қаласы",
     time: "16:00",
-    mapUrl: "https://2gis.kz/almaty",
+    mapUrl:
+      "https://2gis.kz/kyzylorda/geo/70000001077453606/65.531481,44.790043",
     image: "/images/location.webp",
   },
   gallery: {
     title: "Сүйікті сәттер",
     images: [
-      { src: "/images/save-date.webp", alt: "" },
-      { src: "/images/location.webp", alt: "" },
-      { src: "/images/hero.webp", alt: "" },
+      { src: "/images/gallery-1.webp", alt: "" },
+      { src: "/images/gallery-4.webp", alt: "" },
+      { src: "/images/gallery-5.webp", alt: "" },
+      { src: "/images/gallery-9.webp", alt: "" },
+      { src: "/images/gallery-8.webp", alt: "" },
+      { src: "/images/gallery-3.webp", alt: "" },
+      { src: "/images/gallery-7.webp", alt: "" },
+      { src: "/images/gallery-2.webp", alt: "" },
+      { src: "/images/gallery-6.webp", alt: "" },
     ],
   },
   dressCode: {
@@ -55,13 +62,20 @@ export const invitation: InvitationEvent = {
   },
   hosts: {
     title: "Той иелері:",
-    names: "Нұрбек пен Айгерім",
+    names: "Нұрбол пен Нұргүл",
   },
   countdown: {
     title: "Той салтанатына дейін",
-    backgroundImage: "/images/save-date.webp",
-    startsAtISO: "2026-09-27T16:00:00+05:00",
+    backgroundImage: "/images/countdown.webp",
+    startsAtISO: "2026-06-06T16:00:00+05:00",
     expiredMessage: "Құттықтаймыз! Бұл күн ең жарқын естеліктерге толсын.",
+  },
+  timeline: {
+    title: "Той бағдарламасы",
+    events: [
+      { time: "18:00", label: "Беташар" },
+      { time: "19:00", label: "Той салтанаты" },
+    ],
   },
   closing: {
     lines: ["Келіңіздер,", "тойымыздың қадірлі қонағы болыңыздар!"],

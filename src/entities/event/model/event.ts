@@ -54,6 +54,10 @@ export type InvitationEvent = {
     /** Санақ аяқталғанда көрсетілетін жол */
     expiredMessage?: string;
   };
+  timeline: {
+    title: string;
+    events: Array<{ time: string; label: string }>;
+  };
   closing: {
     lines: string[];
   };

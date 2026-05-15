@@ -4,22 +4,29 @@ import ArrowDown from '@shared/assets/icons/arrow-down.svg?react';
 import { Container } from '@shared/ui/Container';
 import styles from './HeroSection.module.scss';
 
-const BACKGROUND_TRACK_SRC = '/audio/nurzhan-kermenbayev-ainalaiyn.mp3';
+const BACKGROUND_TRACK_SRC = '/audio/kuandyk-rahym-appagym.mp3';
 
 export function HeroSection() {
-  const [isMusicEnabled, setIsMusicEnabled] = useState(false);
+  const [isMusicEnabled, setIsMusicEnabled] = useState(true);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     const el = audioRef.current;
     if (!el) return;
     el.volume = 0.65;
+
     if (isMusicEnabled) {
       const p = el.play();
-      if (p !== undefined)
+      if (p !== undefined) {
         void p.catch(() => {
-          setIsMusicEnabled(false);
+          const playOnInteraction = () => {
+            void el.play().catch(() => setIsMusicEnabled(false));
+          };
+          document.addEventListener('click', playOnInteraction, { once: true });
+          document.addEventListener('touchstart', playOnInteraction, { once: true });
+          document.addEventListener('scroll', playOnInteraction, { once: true });
         });
+      }
     } else {
       el.pause();
     }
