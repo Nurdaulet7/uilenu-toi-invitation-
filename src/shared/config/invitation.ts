@@ -1,7 +1,7 @@
 import type { InvitationEvent } from "@entities/event";
 
 export const invitation: InvitationEvent = {
-  couple: "Аяулым & Арман",
+  couple: "Диас & Айдана",
   date: "6 маусым 2026",
   intro: {
     title: "Қадірлі қонақтар!",
@@ -34,6 +34,9 @@ export const invitation: InvitationEvent = {
   gallery: {
     title: "Сүйікті сәттер",
     images: [
+      { src: "/images/gallery-10.webp", alt: "" },
+      { src: "/images/gallery-11.webp", alt: "" },
+      { src: "/images/gallery-12.webp", alt: "" },
       { src: "/images/gallery-1.webp", alt: "" },
       { src: "/images/gallery-4.webp", alt: "" },
       { src: "/images/gallery-5.webp", alt: "" },
@@ -41,7 +44,6 @@ export const invitation: InvitationEvent = {
       { src: "/images/gallery-8.webp", alt: "" },
       { src: "/images/gallery-3.webp", alt: "" },
       { src: "/images/gallery-7.webp", alt: "" },
-      { src: "/images/gallery-2.webp", alt: "" },
       { src: "/images/gallery-6.webp", alt: "" },
     ],
   },
@@ -62,7 +64,7 @@ export const invitation: InvitationEvent = {
   },
   hosts: {
     title: "Той иелері:",
-    names: "Нұрбол пен Нұргүл",
+    names: "Нұрбол мен Нұргүл",
   },
   countdown: {
     title: "Той салтанатына дейін",
