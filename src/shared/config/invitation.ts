@@ -1,8 +1,8 @@
 import type { InvitationEvent } from "@entities/event";
 
 export const invitation: InvitationEvent = {
-  couple: "Диас & Айдана",
-  date: "6 маусым 2026",
+  couple: "Айбек & Гүлфат",
+  date: "21 тамыз 2026",
   intro: {
     title: "Қадірлі қонақтар!",
     paragraphs: [
@@ -13,22 +13,21 @@ export const invitation: InvitationEvent = {
   },
   saveDate: {
     title: "Той күні:",
-    date: "6 маусым 2026",
+    date: "21 тамыз 2026",
     text: "біз бір отбасы болатын керемет күн",
     image: "/images/save-date.png",
   },
   details: [
     { label: "Қонақтардың жиналуы", value: "16:00" },
-    { label: "Мекен-жайымыз", value: "Dariya" },
+    { label: "Мекен-жайымыз", value: "AEG Grand Hall" },
     { label: "Қала", value: "Қызылорда" },
   ],
   venue: {
-    name: '"Dariya" мейрамханасы',
-    address: 'Қызылорда қаласы, "Dariya" мейрамханасы',
+    name: "AEG Grand Hall мейрамханасы",
+    address: "Қызылорда қаласы, Астана даңғылы, 83",
     city: "Қызылорда қаласы",
     time: "16:00",
-    mapUrl:
-      "https://2gis.kz/kyzylorda/geo/70000001077453606/65.531481,44.790043",
+    mapUrl: "https://go.2gis.com/dZnci",
     image: "/images/location.png",
   },
   gallery: {
@@ -64,12 +63,12 @@ export const invitation: InvitationEvent = {
   },
   hosts: {
     title: "Той иелері:",
-    names: "Нұрбол мен Нұргүл",
+    names: "Аптай мен Гүлайна",
   },
   countdown: {
     title: "Той салтанатына дейін",
     backgroundImage: "/images/countdown.png",
-    startsAtISO: "2026-06-06T16:00:00+05:00",
+    startsAtISO: "2026-08-21T16:00:00+05:00",
     expiredMessage: "Құттықтаймыз! Бұл күн ең жарқын естеліктерге толсын.",
   },
   timeline: {

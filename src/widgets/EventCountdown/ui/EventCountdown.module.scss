@@ -1,13 +1,63 @@
 .section {
+  --countdown-divider-top-height: clamp(48px, 10vw, 80px);
+  --countdown-divider-bottom-height: clamp(48px, 10vw, 80px);
+
   position: relative;
   display: flex;
-  min-height: 100vh;
-  min-height: 100svh;
+  min-height: 85vh;
+  min-height: 85svh;
+  max-height: 90vh;
+  max-height: 90svh;
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
   overflow: hidden;
   isolation: isolate;
+}
+
+.shapeFill {
+  fill: var(--color-surface);
+}
+
+.dividerBottom .shapeFill {
+  fill: var(--color-paper);
+}
+
+.dividerTop {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  pointer-events: none;
+
+  svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: var(--countdown-divider-top-height);
+  }
+}
+
+.dividerBottom {
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  pointer-events: none;
+
+  svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: var(--countdown-divider-bottom-height);
+  }
 }
 
 .bg {
@@ -115,4 +165,18 @@
   line-height: 1.58;
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.42);
   text-wrap: balance;
+}
+
+@media (max-width: 560px) {
+  .section {
+    --countdown-divider-top-height: clamp(40px, 9vw, 64px);
+    --countdown-divider-bottom-height: clamp(40px, 9vw, 64px);
+  }
+}
+
+@media (max-width: 420px) {
+  .section {
+    --countdown-divider-top-height: 36px;
+    --countdown-divider-bottom-height: 36px;
+  }
 }

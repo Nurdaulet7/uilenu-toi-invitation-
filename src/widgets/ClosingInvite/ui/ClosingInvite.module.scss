@@ -1,6 +1,5 @@
 .section {
   padding: var(--section-y) 0 clamp(40px, 10vw, 88px);
-  border-top: 1px solid var(--color-line);
   background: var(--color-paper);
   color: var(--color-ink);
 }

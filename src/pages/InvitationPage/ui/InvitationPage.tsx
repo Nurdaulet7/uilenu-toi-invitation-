@@ -19,8 +19,10 @@ export function InvitationPage() {
         <HeroSection />
         <InvitationIntro />
         <SaveDateLocation />
-        <FeatureImageSection />
         <EventTimeline />
+        <FeatureImageSection />
+        
+
         <DressCode />
         <HostsSection />
         <RSVPSection />

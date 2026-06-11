@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import ArrowDown from '@shared/assets/icons/arrow-down.svg?react';
+import { invitation } from '@shared/config/invitation';
 import { Container } from '@shared/ui/Container';
 import styles from './HeroSection.module.scss';
 
@@ -68,11 +69,11 @@ export function HeroSection() {
 
       <Container className={styles.content}>
         <p className={styles.initials} aria-hidden="true">
-          <span className={`${styles.initialsStep} ${styles.stepFirst}`}>Д</span>
+          <span className={`${styles.initialsStep} ${styles.stepFirst}`}>А</span>
           <span className={`${styles.initialsStep} ${styles.stepMid}`}>&</span>
-          <span className={`${styles.initialsStep} ${styles.stepLast}`}>А</span>
+          <span className={`${styles.initialsStep} ${styles.stepLast}`}>Г</span>
         </p>
-        <h1 className={styles.title}>Диас & Айдана</h1>
+        <h1 className={styles.title}>{invitation.couple}</h1>
       </Container>
 
       <a className={styles.scrollButton} href="#intro" aria-label="Келесі бөлімге өту">

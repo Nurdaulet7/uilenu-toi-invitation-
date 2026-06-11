@@ -61,6 +61,15 @@ export function EventCountdown() {
 
   return (
     <section className={styles.section} id="countdown" aria-labelledby="countdown-heading">
+      <div className={styles.dividerTop} aria-hidden="true">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path
+            d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z"
+            className={styles.shapeFill}
+          />
+        </svg>
+      </div>
+
       {bgStyle ? <div aria-hidden="true" className={styles.bg} style={bgStyle} /> : null}
       <div aria-hidden="true" className={styles.scrim} />
       <Container className={styles.shell}>
@@ -120,6 +129,15 @@ export function EventCountdown() {
           )}
         </motion.div>
       </Container>
+
+      <div className={styles.dividerBottom} aria-hidden="true">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path
+            d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z"
+            className={styles.shapeFill}
+          />
+        </svg>
+      </div>
     </section>
   );
 }
