@@ -1,11 +1,13 @@
 .hero {
+  --hero-divider-bottom-height: clamp(36px, 8vw, 50px);
+
   position: relative;
   display: flex;
   min-height: 100svh;
   align-items: flex-end;
   justify-content: center;
-  overflow: hidden;
-  padding: 96px 20px 88px;
+  overflow-x: clip;
+  padding: 96px 20px 100px;
   color: #fffaf2;
   background:
     linear-gradient(
@@ -14,36 +16,64 @@
       rgba(18, 14, 11, 0.18) 42%,
       rgba(18, 14, 11, 0.72) 100%
     ),
-    url("/images/hero.webp") center / cover no-repeat,
+    url("/images/hero.png") center / cover no-repeat,
     linear-gradient(135deg, #7a675b 0%, #2f2a24 100%);
 }
 
 .content {
   position: relative;
   z-index: 1;
+  overflow: visible;
   text-align: center;
+}
+
+.initials {
+  --stair-step: 0.16em;
+
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.12em;
+  margin: 0 auto;
+  padding-block: 0.12em 0.2em;
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 14vw, 6rem);
+  font-weight: 400;
+  overflow: visible;
+}
+
+.initialsStep {
+  display: inline-block;
+  line-height: 1.25;
+  padding-block: 0.1em;
+  color: #f5dcc0;
+  text-shadow:
+    0 0 28px rgba(255, 246, 235, 0.4),
+    0 2px 14px rgba(0, 0, 0, 0.22);
+}
+
+.stepFirst {
+  padding-top: 0;
+}
+
+.stepMid {
+  padding-top: calc(var(--stair-step) * 3);
+  font-size: 0.62em;
+}
+
+.stepLast {
+  margin-left: -10px;
+  padding-top: calc(var(--stair-step) * 2);
 }
 
 .title {
   margin: 0 auto;
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 9vw, 5.2rem);
+  font-size: clamp(2.25rem, 6.8vw, 3.4rem);
   font-weight: 400;
-  line-height: 0.98;
-  text-shadow: 0 12px 42px rgba(0, 0, 0, 0.34);
+  line-height: 1.05;
+  text-shadow: 0 8px 32px rgba(0, 0, 0, 0.34);
   white-space: nowrap;
-}
-
-.subtitle {
-  margin: 14px 0 0;
-  color: #fff;
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4.4vw, 3.25rem);
-  font-weight: 400;
-  line-height: 1;
-  text-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.55),
-    0 8px 32px rgba(0, 0, 0, 0.42);
 }
 
 .musicWrap {
@@ -112,7 +142,7 @@
 .scrollButton {
   position: absolute;
   z-index: 2;
-  bottom: 35px;
+  bottom: calc(var(--hero-divider-bottom-height) + 14px);
   left: 50%;
   display: inline-flex;
   align-items: center;
@@ -130,6 +160,28 @@
 .scrollArrow {
   width: 32px;
   height: auto;
+}
+
+.shapeFill {
+  fill: #fffaf2;
+}
+
+.dividerBottom {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  pointer-events: none;
+
+  svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: var(--hero-divider-bottom-height);
+  }
 }
 
 @keyframes spin {
@@ -167,6 +219,8 @@
 
 @media (max-width: 560px) {
   .hero {
+    --hero-divider-bottom-height: clamp(30px, 7.5vw, 42px);
+
     padding: 84px 18px 74px;
   }
 
@@ -195,5 +249,11 @@
 
   .scrollArrow {
     width: 26px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero {
+    --hero-divider-bottom-height: 28px;
   }
 }

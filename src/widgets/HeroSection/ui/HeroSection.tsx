@@ -67,13 +67,26 @@ export function HeroSection() {
       </div>
 
       <Container className={styles.content}>
+        <p className={styles.initials} aria-hidden="true">
+          <span className={`${styles.initialsStep} ${styles.stepFirst}`}>Д</span>
+          <span className={`${styles.initialsStep} ${styles.stepMid}`}>&</span>
+          <span className={`${styles.initialsStep} ${styles.stepLast}`}>А</span>
+        </p>
         <h1 className={styles.title}>Диас & Айдана</h1>
-        <p className={styles.subtitle}>Үйлену тойы</p>
       </Container>
 
       <a className={styles.scrollButton} href="#intro" aria-label="Келесі бөлімге өту">
         <ArrowDown className={styles.scrollArrow} aria-hidden="true" />
       </a>
+
+      <div className={styles.dividerBottom} aria-hidden="true">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path
+            d="M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z"
+            className={styles.shapeFill}
+          />
+        </svg>
+      </div>
     </section>
   );
 }

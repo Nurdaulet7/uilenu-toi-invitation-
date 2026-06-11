@@ -15,7 +15,7 @@ export const invitation: InvitationEvent = {
     title: "Той күні:",
     date: "6 маусым 2026",
     text: "біз бір отбасы болатын керемет күн",
-    image: "/images/save-date.webp",
+    image: "/images/save-date.png",
   },
   details: [
     { label: "Қонақтардың жиналуы", value: "16:00" },
@@ -29,7 +29,7 @@ export const invitation: InvitationEvent = {
     time: "16:00",
     mapUrl:
       "https://2gis.kz/kyzylorda/geo/70000001077453606/65.531481,44.790043",
-    image: "/images/location.webp",
+    image: "/images/location.png",
   },
   gallery: {
     title: "Сүйікті сәттер",
@@ -68,7 +68,7 @@ export const invitation: InvitationEvent = {
   },
   countdown: {
     title: "Той салтанатына дейін",
-    backgroundImage: "/images/countdown.webp",
+    backgroundImage: "/images/countdown.png",
     startsAtISO: "2026-06-06T16:00:00+05:00",
     expiredMessage: "Құттықтаймыз! Бұл күн ең жарқын естеліктерге толсын.",
   },

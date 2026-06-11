@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\User\\\\pet-projects\\\\wedding-invitation-new\" -Recurse -Force)",
+      "Bash(Select-Object FullName)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\User\\\\pet-projects\\\\wedding-invitation-new\" -Recurse -Include \"*.jsx\",\"*.tsx\",\"*.js\",\"*.ts\")",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(Head -20)",
+      "Bash(npx tsc *)",
+      "Bash(ls /mnt/c/Users/User/Downloads/ | tail -30)",
+      "Read(//mnt/c/Users/User/**)"
+    ]
+  }
+}

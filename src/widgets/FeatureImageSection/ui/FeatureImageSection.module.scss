@@ -1,0 +1,93 @@
+.section {
+  --divider-top-height: clamp(56px, 14vw, 100px);
+  --divider-bottom-height: clamp(56px, 14vw, 100px);
+
+  position: relative;
+  overflow: hidden;
+  background: #fffaf2;
+}
+
+.imageWrap {
+  width: 100%;
+  max-height: clamp(300px, 48vh, 440px);
+  overflow: hidden;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: clamp(300px, 48vh, 440px);
+  object-fit: cover;
+  object-position: center;
+}
+
+.shapeFill {
+  fill: #fffaf2;
+}
+
+.dividerTop {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  pointer-events: none;
+
+  svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: var(--divider-top-height);
+  }
+}
+
+.dividerBottom {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  pointer-events: none;
+
+  svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: var(--divider-bottom-height);
+  }
+}
+
+@media (max-width: 560px) {
+  .section {
+    --divider-top-height: clamp(44px, 12vw, 72px);
+    --divider-bottom-height: clamp(44px, 12vw, 72px);
+  }
+
+  .imageWrap {
+    max-height: clamp(260px, 44vh, 380px);
+  }
+
+  .image {
+    height: clamp(260px, 44vh, 380px);
+  }
+}
+
+@media (max-width: 420px) {
+  .section {
+    --divider-top-height: 40px;
+    --divider-bottom-height: 40px;
+  }
+
+  .imageWrap {
+    max-height: clamp(220px, 40vh, 320px);
+  }
+
+  .image {
+    height: clamp(220px, 40vh, 320px);
+  }
+}

@@ -6,7 +6,7 @@ import { ClosingInvite } from '@widgets/ClosingInvite';
 import { DressCode } from '@widgets/DressCode';
 import { EventCountdown } from '@widgets/EventCountdown';
 import { EventTimeline } from '@widgets/EventTimeline';
-import { GallerySlider } from '@widgets/GallerySlider';
+import { FeatureImageSection } from '@widgets/FeatureImageSection';
 import { RSVPSection } from '@widgets/RSVPSection';
 import { SaveDateLocation } from '@widgets/SaveDateLocation';
 
@@ -19,7 +19,7 @@ export function InvitationPage() {
         <HeroSection />
         <InvitationIntro />
         <SaveDateLocation />
-        <GallerySlider />
+        <FeatureImageSection />
         <EventTimeline />
         <DressCode />
         <HostsSection />
