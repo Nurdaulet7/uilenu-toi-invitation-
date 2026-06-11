@@ -5,8 +5,8 @@ export const rsvpContent = {
   nameIntro:
     "Аты-жөніңіз (жұбыңызбен келетін болсаңыз, есімдеріңізді бірге жазуыңызды өтінеміз)",
   namePlaceholder: "Аты-жөніңіз",
-  guestsHeading: "Неше адам келеді?",
   attendanceComing: "Келемін",
+  attendanceComingWithSpouse: "Жұбайыммен келемін",
   attendanceNotComing: "Өкінішке орай, келе алмаймын",
   submit: "Жіберу",
   submitting: "…",

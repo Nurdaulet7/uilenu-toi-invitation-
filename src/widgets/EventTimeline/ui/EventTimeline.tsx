@@ -42,9 +42,9 @@ export function EventTimeline() {
           <ol className={styles.list}>
             {timeline.events.map((ev) => (
               <motion.li key={ev.time} className={styles.item} variants={slideIn}>
-                <span className={styles.time}>{ev.time}</span>
-                <span className={styles.dot} aria-hidden="true" />
                 <span className={styles.label}>{ev.label}</span>
+                <span className={styles.dot} aria-hidden="true" />
+                <span className={styles.time}>{ev.time}</span>
               </motion.li>
             ))}
           </ol>

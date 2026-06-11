@@ -1,4 +1,4 @@
-import { FormEvent, useCallback, useState } from 'react';
+import { FormEvent, useState } from 'react';
 
 import { rsvpContent } from '@shared/config/rsvpContent';
 import { getRsvpTelegramCredentials } from '@shared/config/rsvpEnv';
@@ -6,24 +6,24 @@ import { Button } from '@shared/ui/Button';
 
 import styles from './RSVPForm.module.scss';
 
-type Attendance = 'coming' | 'not-coming';
+type Attendance = 'coming' | 'coming-with-spouse' | 'not-coming';
 
 type FormState = {
   name: string;
-  guests: number;
   attendance: Attendance;
 };
 
-export function RSVPForm() {
-  const [form, setForm] = useState<FormState>({ name: '', guests: 1, attendance: 'coming' });
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+const attendanceOptions: Attendance[] = ['coming', 'coming-with-spouse', 'not-coming'];
 
-  const changeGuests = useCallback((delta: number) => {
-    setForm((f) => ({
-      ...f,
-      guests: Math.max(1, Math.min(10, f.guests + delta)),
-    }));
-  }, []);
+function getAttendanceLabel(attendance: Attendance): string {
+  if (attendance === 'coming') return rsvpContent.attendanceComing;
+  if (attendance === 'coming-with-spouse') return rsvpContent.attendanceComingWithSpouse;
+  return rsvpContent.attendanceNotComing;
+}
+
+export function RSVPForm() {
+  const [form, setForm] = useState<FormState>({ name: '', attendance: 'coming' });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -36,24 +36,28 @@ export function RSVPForm() {
     }
 
     const attendanceTelegramLine =
-      form.attendance === 'coming'
-        ? `✅ ${rsvpContent.attendanceComing}`
-        : `❌ ${rsvpContent.attendanceNotComing}`;
+      form.attendance === 'not-coming'
+        ? `❌ ${rsvpContent.attendanceNotComing}`
+        : `✅ ${getAttendanceLabel(form.attendance)}`;
 
     const text =
       `${rsvpContent.telegramMessageHeading}\n\n` +
       `👤 ${form.name.trim()}\n` +
-      `👥 Адам саны: ${form.guests}\n` +
       `${attendanceTelegramLine}`;
 
     try {
-      const res = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+      const res = await fetch('/api/rsvp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: chatId, text }),
+        body: JSON.stringify({ text }),
       });
 
-      if (!res.ok) throw new Error('Telegram error');
+      if (!res.ok) {
+        const data = (await res.json().catch(() => null)) as { error?: string } | null;
+        console.error('RSVP error:', data?.error ?? res.statusText);
+        throw new Error('RSVP error');
+      }
+
       setStatus('success');
     } catch {
       setStatus('error');
@@ -85,33 +89,8 @@ export function RSVPForm() {
       </div>
 
       <div className={styles.fieldBlock}>
-        <p className={styles.fieldHeading}>{rsvpContent.guestsHeading}</p>
-        <div className={styles.counter}>
-          <button
-            aria-label="-1 адам"
-            className={styles.counterBtn}
-            disabled={form.guests <= 1}
-            type="button"
-            onClick={() => changeGuests(-1)}
-          >
-            −
-          </button>
-          <span className={styles.counterValue}>{form.guests}</span>
-          <button
-            aria-label="+1 адам"
-            className={styles.counterBtn}
-            disabled={form.guests >= 10}
-            type="button"
-            onClick={() => changeGuests(1)}
-          >
-            +
-          </button>
-        </div>
-      </div>
-
-      <div className={styles.fieldBlock}>
         <div className={styles.radios} role="radiogroup" aria-label="Қатысу">
-          {(['coming', 'not-coming'] as const).map((val) => (
+          {attendanceOptions.map((val) => (
             <label key={val} className={styles.radioLabel}>
               <input
                 checked={form.attendance === val}
@@ -125,9 +104,7 @@ export function RSVPForm() {
                 className={val === 'not-coming' ? styles.radioCustomX : styles.radioCustom}
                 aria-hidden
               />
-              <span className={styles.radioText}>
-                {val === 'coming' ? rsvpContent.attendanceComing : rsvpContent.attendanceNotComing}
-              </span>
+              <span className={styles.radioText}>{getAttendanceLabel(val)}</span>
             </label>
           ))}
         </div>
