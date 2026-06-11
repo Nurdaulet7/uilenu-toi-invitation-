@@ -5,7 +5,7 @@ import { invitation } from '@shared/config/invitation';
 import { Container } from '@shared/ui/Container';
 import styles from './HeroSection.module.scss';
 
-const BACKGROUND_TRACK_SRC = '/audio/nurzhan-kermenbayev-ainalaiyn.mp3';
+const BACKGROUND_TRACK_SRC = '/audio/miras-zholdama.mp3';
 
 export function HeroSection() {
   const [isMusicEnabled, setIsMusicEnabled] = useState(true);
